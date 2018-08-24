@@ -1,0 +1,81 @@
+.h-tab-wrap {
+    position: relative;
+    float: left;
+    margin: 3px 0 0;
+    border: none;
+  }
+  
+  a.h-tab-wrap-lnk, a.h-tab-wrap-lnk:visited {
+    float: left;
+    padding: 3px 9px 6px 12px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 17px;
+  }
+
+  .h-tab-wrap.active{
+      background: #3b5999;
+  }
+
+  .h-tab-wrap.active a.h-tab-wrap-lnk, .h-tab-wrap.h-hasSubTabs.active a.h-tab-wrap-lnk{
+    color: #f79220;
+  }
+
+  .h-tab-wrap.h-hasSubTabs.active a.h-tab-wrap-lnk{
+    padding: 3px 9px 12px 12px;
+  }
+  
+  .h-hasSubTabs .h-tab-wrap-arrow {
+    width: 17px;
+    height: 15px;
+    padding: 1px 0 0 0;
+  }
+  
+  .h-hasSubTabs .h-tab-wrap-arrow .svg {
+    width: 12px;
+    height: 18px;
+    fill: #ffffff;
+  }
+  
+  
+  .h-tab-wrap-subTabs, .h-tab-wrap-subTabs_right {
+    position: absolute;
+    z-index: 999;
+    top: 32px;
+    background: #3b5999;
+    padding: 0;
+    border-radius: 0 0 2px 2px;
+    white-space: nowrap;
+  }
+
+  .h-tab-wrap-subTabs-lbl {
+    padding: 5px 6px;
+    display: inline-block;
+}
+
+a.h-tab-wrap-subTabs-lnk, .h-tab-wrap-subTabs-lnk, a.h-tab-wrap-subTabs-lnk:visited {
+    padding: 3px 6px;
+    display: inline-block;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.h-tab-wrap-subTabs-lnk:hover{
+  color:#f79220;
+}
+.h-subTab-bdr {
+    height: 13px;
+    width: 1px;
+    border-right: none;
+    zoom: 1;
+}
+
+.h-tab-wrap-subTabs-lbl {
+    padding: 5px 6px;
+    display: inline-block;
+}
+
+.h-fR {
+  float: right;
+}

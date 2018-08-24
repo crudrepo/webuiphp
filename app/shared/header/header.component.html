@@ -1,0 +1,44 @@
+<!--breadcrunb start-->
+<div class="dew-breadcrumb">
+  <ol class="breadcrumb has-light-text">
+    <li class="breadcrumb-item">
+      <span>Home</span>
+    </li>
+    
+    <li class="breadcrumb-item" *ngFor="let bread of breadcrumb;">
+      <a *ngIf="bread.url" routerLink="{{bread.url}}">{{bread.name}}</a>
+      <span *ngIf="!bread.url">{{bread.name}}</span>
+    </li>
+  </ol>
+</div>
+<!--breadcrunb end-->
+
+<!--Pageheading start-->
+<div>
+    <h4 class="text-spotlight text-light text-capitalize mt-1 mb-3">
+      <div class="pointer mr-3 icon icon-chevron-left icon-22" _nghost-c8="" ng-reflect-class="pointer mr-3" ng-reflect-icon="chevron-left" ng-reflect-size="22"></div>
+      <i *ngIf="showBackbutton" routerLink="{{gobackto}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18">
+          <g fill="none" fill-rule="evenodd" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+            <path d="M9.143 1L1 9.138 8.867 17M1.905 9H20"/>
+          </g>
+        </svg>
+      </i>
+      {{pageHeading}}
+    </h4>
+<div>
+<!--Pageheading end-->
+
+<!--NavTabs start-->
+<div class="dew-tabset" *ngIf="navTabs" >
+  <div class="tabset">
+    <div class="tab-links-wrapper transparent nopadding">
+      <ul class="nav nav-pills">
+        <li class="nav-item" *ngFor="let nav of navigation">
+          <a class="nav-link text-light" id="{{nav.i}}" routerLink="{{nav.url}}"  routerLinkActive="active">{{nav.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--NavTabs end-->

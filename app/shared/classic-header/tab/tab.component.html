@@ -1,0 +1,11 @@
+<span (mouseover)="isActive = true;" (mouseout)="isActive = false;" [ngClass]="{'active':isActive,'h-hasSubTabs':tabData.subTabs.length>0}" class="h-tab-wrap h-tab-fit-blck dev_span_userManagement">
+    <a [href]="tabData.url" [id]="tabData.name" class="h-tab-wrap-lnk">{{tabData.label}}
+        <span *ngIf="tabData.subTabs.length>0" class="h-tab-wrap-arrow h-fR"><svg class="svg h-fR" viewBox="0 0 512 512"><polygon points="261,405.4 55,123.599 260.594,257.064 463,123.599 "></polygon></svg></span>
+    </a>
+    <div [hidden]="!isActive" class="h-tab-wrap-subTabs">
+        <span  *ngFor="let tab of tabData.subTabs" class="h-tab-wrap-subTabs-lbl dev_label_master_data h-subNavSelected">
+            <a [href]="tab.url" class="h-tab-wrap-subTabs-lnk" [id]="tab.name">{{tab.label}}</a>
+        </span>
+        <span class="h-subTab-bdr"></span>
+    </div>
+</span>

@@ -1,0 +1,169 @@
+.h-header, .h-topBand-det, .h-topBand-nav-lnk:hover {
+  background: #3b5999;
+}
+
+.h-clearfix {
+  zoom: 1;
+}
+
+.h-topBand-det {
+  position: relative;
+  float: left;
+  width: 328px;
+  height: 35px;
+}
+
+.h-topBand-lnks {
+  min-height: 35px;
+  margin: 3px 0 0 0;
+  background: #3b5999;
+  float: right;
+}
+
+.h-logo {
+  width: 100px;
+  margin: 7px 12px 0;
+}
+.h-fL {
+  float: left;
+}
+
+.h-fR {
+  float: right;
+}
+
+.h-topBand-nav {
+  position: relative;
+  right: 10px;
+  z-index: 999;
+}
+
+.h-clearfix:before, .h-clearfix:after {
+  content: "";
+  display: table;
+}
+.h-topBand-nav-lst {
+  position: relative;
+  float: left;
+  display: inline;
+  height: 14px;
+  padding: 4px 5px;
+  margin: 4px;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.h-topBand-nav-sep {
+  width: 0;
+  border: 1px solid #4d4d4d;
+  border-width: 0 1px 0 0;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  padding: 0;
+  margin: 0;
+  height: 32px;
+}
+
+.h-topBand-nav-lst.h-curDef {
+  max-width: 490px;
+  height: auto;
+  padding: 0 5px;
+}
+
+.h-quest, .h-logOut, .h-settings {
+  float: left;
+  height: 20px;
+  width: 13px;
+  margin-top: -3px;
+}
+
+.h-topBand-nav .h-topBand-arr {
+  float: left;
+  height: 18px;
+  width: 13px;
+  margin: -10px 0 0 5px;
+  padding: 7px 0;
+}
+
+.h-topBand-arr .svg {
+  width: 20px;
+  height: 25px;
+  fill: #ffffff;
+}
+
+.h-quest .svg, .h-logOut .svg, .h-settings .svg {
+  width: 15px;
+  height: 20px;
+  fill: #ffa726;
+}
+
+.h-topBand-lnks .h-topBand-arr .svg {
+  padding-left: 3px;
+  width: 15px;
+  height: 20px;
+}
+
+.h-topBand-nav-menu {
+  position: absolute;
+  top: 21px;
+  right: -1px;
+  z-index: -1;
+  border: 1px solid #5872a8;
+  display: none;
+  background: #3b5999;
+  box-shadow: 0 2px 4px #5872a8;
+  white-space: nowrap;
+}
+
+.h-topBand-menu-lst {
+  border-bottom: 1px solid #5872a8;
+  position: relative;
+}
+
+a.h-topBand-menu-lnk, a.lpChatTextLink {
+  display: block;
+  padding: 11px 14px;
+  color: #fff;
+  text-decoration: none;
+}
+.h-topBand-nav .h-borderSep {
+  height: 12px;
+  width: 0;
+  margin-top: 9px;
+  padding: 0;
+  border-left: 1px solid #d8deeb;
+}
+
+.h-tab-all {
+  clear: both;
+  padding: 0 10px 0 10px;
+  background: #5872a8;
+  border-bottom: 2px solid #ffa726;
+  height: 35px;
+}
+
+.h-tab-fit {
+  float: left;
+  padding-bottom: 0;
+}
+
+.h-prodName {
+  padding: 8px 10px 0 0;
+  overflow: hidden;
+  width: 80%;
+  white-space: nowrap;
+  color: #fff;
+  font-family: verdana, sans-serif;
+  font-size: 16px;
+}
+
+.h-topBand-arr {
+  height: 33px;
+  width: 15px;
+  padding-left: 3px;
+  margin-top: 5px;
+}
+
+.h-topBand-det-prodWrap .h-topBand-arr .svg {
+  padding-top: 6px;
+}

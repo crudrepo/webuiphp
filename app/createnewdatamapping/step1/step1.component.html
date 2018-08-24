@@ -1,0 +1,45 @@
+<div *ngIf="appLoader" class="appLoading overlay position-absolute w-100 d-flex justify-content-center h-100 align-items-center">
+  <app-loader></app-loader>
+</div>
+  <div [hidden]="apploader">
+    <div class="container-fluid py-5">
+      <div class="row">
+        <div class="bg-white col-md-12">
+          <h5 class="text-title">Basic details</h5>
+          <div class="row">
+            <form>
+              <div class="col-md-6 mt-2">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Table Name
+                        <span class="text-danger text-18 font-weight-bold">*</span>
+                      </label>
+                      <input type="text" class="form-control" readonly [(ngModel)]="tableName" name="tableName" placeholder="Enter name">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Unique Id
+                        <span class="text-white text-18 font-weight-bold">*</span>
+                      </label>
+                      <input type="text" class="form-control" readonly  [(ngModel)]="uuid" name="uuid" placeholder="Enter Unique Id">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Description
+                        <span class="text-white text-18 font-weight-bold">*</span></label>
+                        <textarea class="form-control" readonly rows="3" placeholder="Enter Description"  [(ngModel)]="desc" name="desc"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

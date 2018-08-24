@@ -1,0 +1,58 @@
+<!-- <div id="loading" *ngIf="appLoader">
+<div class="loader"> &nbsp; </div>
+</div> -->
+<div class="tab-content h-100" >
+  <div role="tabpanel" class="tab-pane active h-100">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <!--Listing Section Start-->
+        <div class="col-md-12">
+          <div class="appLoading overlay position-absolute w-100 d-flex justify-content-center h-100 align-items-center" *ngIf="appLoader">
+            <app-loader></app-loader>
+          </div>
+          <div class="section-header row align-items-center justify-content-between">
+            <div class="col-md-7">
+              <h5 class="text-title mt-5 mb-5">
+                {{subHeading}} <span class="text-title">({{rows.length}})</span> <!-- Later adding pagination count -->
+              </h5>
+            </div>
+
+            <div class="col-md-5">
+              <div class="position-absolute">
+                <span class="import d-inline-block" (click)="openVerticallyCentered(content)" placement="top" ngbTooltip="Apply Filter">
+                  <svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Filter</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Filter" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="#-IMPORT" fill="#FFFFFF" stroke="#D0DBE1">
+                        <circle id="Oval" cx="18" cy="18" r="17.5"></circle>
+                      </g>
+                      <g id="filter" transform="translate(10.000000, 11.000000)" fill="#999999" fill-rule="nonzero" stroke="#979797" stroke-width="0.5">
+                        <path d="M15.9537031,0.301698854 C15.873658,0.117494903 15.7027701,0 15.5150715,0 L0.484953983,0 C0.297255321,0 0.126432081,0.117494903 0.0463223173,0.301698854 C-0.0337227892,0.485902804 -0.00863595456,0.703636643 0.110785137,0.860764155 L5.88858059,8.46349109 L5.88858059,15.4739034 C5.88858059,15.6559328 5.97528534,15.8249852 6.11778891,15.9209452 C6.19589431,15.9734847 6.28453877,16 6.37350651,16 C6.44702128,16 6.52079468,15.9818321 6.58881363,15.945286 L9.83510176,14.1996975 C10.0000412,14.1110327 10.1043973,13.9287227 10.1046559,13.7290164 L10.1109923,8.46370153 L15.889111,0.860694009 C16.0085968,0.703636643 16.0337483,0.485832657 15.9537031,0.301698854 Z M9.25222079,7.93984962 C9.18077504,8.03384555 9.14159302,8.15190162 9.14146371,8.27381573 L9.13525666,13.4017142 L6.8584971,14.625976 L6.8584971,8.2745172 C6.8584971,8.15239264 6.81937974,8.03405599 6.74774002,7.93984962 L1.51325558,1.05212302 L14.4867052,1.05212302 L9.25222079,7.93984962 Z" id="Shape"></path>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+              </div>
+              <div style="padding-left:44px;padding-right:142px">
+                <input class="form-control" type="text" placeholder="Search here" (keyup)="updateFilter($event)" />
+              </div>
+              <div class="position-absolute absolute-button">
+                <button class="btn btn-success mr-3" [disabled]="true" (click)="addNewWorkflow()">+ Add New Table</button>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-success alert-dismissible fade show" role="alert" style="display:none;" id="successMessage">
+            Task successful!
+          </div>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none;" id="FailMessage">
+            Task failed, please try later!
+          </div>
+          <app-listing class="d-block" [rows]="rows" [columns]="columns" [msg]="msg" [mode]="listdatamapping" [count] = "count" [offset] = "offset" [limit] = "limit" ></app-listing>
+        </div>
+        <!--Listing Section End-->
+      </div>
+    </div>
+  </div>
+</div>

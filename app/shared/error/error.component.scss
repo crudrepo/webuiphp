@@ -1,0 +1,81 @@
+@mixin transform($deg) {
+  -webkit-transform: rotate($deg);
+     -moz-transform: rotate($deg);
+      -ms-transform: rotate($deg);
+          transform: rotate($deg);
+}
+.error_block{height:500px;border-radius: 10px; background-color: #ffffff; border: solid 1px #e1e1e1;}
+.error_msg{font-size: 24px; font-weight: bold; text-align: center; color: #666666;}
+.error_msg_block{position: absolute;left: 0; right: 0; top: 30%; bottom: 0; text-align: center; height: 200px;}
+.unsupported-browser-container{
+  height: calc(100vh - 5px);
+  width: 100%;
+  margin-top: 30px;
+  margin: 0;
+  background-image: linear-gradient(to bottom, white, #d7effe);
+}
+.unsupported-browser{
+  min-height: 600px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.zycus-logo{
+  margin-bottom: 20px;
+}
+.logos-container{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  height: 270px;
+}
+.unsupported-browser-main-txt{
+  color: #273142;
+  font-size: 80px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 54px;
+}
+.unsupported-browser-sub-txt{
+  font-size: 28px;
+  letter-spacing: normal;
+  color: #273142;
+  margin-bottom: 40px;
+}
+.find-solution{
+  font-size: 28px;
+  font-weight: 500;
+  color: #2170f4;
+  cursor: pointer;
+  margin-bottom: 13px;
+}
+.solution-container {
+
+  font-size: 20px;
+  color: #273142;
+}
+.current-browser, .browser-description{
+  opacity: 0.5;
+}
+.current-browser{
+  margin-bottom: 30px;
+}
+.browser-description{
+  margin-bottom: 48px;
+}
+.browser-name{
+  margin-top: 22px;
+  font-size: 20px;
+  color: #273142;
+}
+#solution-icon{
+  @include transform(360deg);
+}
+#solution-icon.left{
+  @include transform(180deg);
+}

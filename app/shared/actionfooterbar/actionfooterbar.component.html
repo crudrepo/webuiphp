@@ -1,0 +1,9 @@
+<div >
+  <div [ngClass]="slideup ? 'slideup' : ''"  class="dew-btns-footer dew-btn bg-white pt-3 pb-3">
+    <button type="button" class="btn dew-btn-default " (click) = "cancelAction()">Cancel</button>
+    <button type="button" class="btn btn-success pl-4 pr-4 float-right font-weight-bold"  (click) = "saveData($event)" [hidden]="saveContinue"> Save & Continue</button>
+    <button type="button" class="btn btn-success pl-4 pr-4 float-right font-weight-bold" [hidden]="ok">OK</button>
+    <button type="button" class="btn dew-btn-default float-right mr-3" disabled [hidden]="saveDraft">Save as draft</button>
+    <button type="button" class="btn dew-btn-default float-right mr-3" [hidden]="true">Create</button>
+  </div>
+</div>

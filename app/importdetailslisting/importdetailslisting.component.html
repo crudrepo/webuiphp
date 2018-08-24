@@ -1,0 +1,43 @@
+<div id="loading" *ngIf="appLoader">
+  <div class="loader"> &nbsp; </div>
+</div>
+<div class="tab-content h-100" *ngIf="!appLoader">
+  <div role="tabpanel" class="tab-pane active h-100">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <!--Listing Section Start-->
+        <div class="col-md-12">
+          <div class="section-header row align-items-center justify-content-between">
+            <div class="col-md-7">
+              <h5 class="text-title mt-5 mb-5">
+                {{subHeading}} <span class="text-title"></span> <!-- Later adding pagination count -->
+              </h5>
+            </div>
+        </div>
+        <!--Listing Section End-->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+<div class="dew-table">
+  <div class="table-wrapper">
+    <ngx-datatable #table class="material table" [rows]="rows" [loadingIndicator]="loadingIndicator" [columns]="columns" [columnMode]="'force'"
+    [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [reorderable]="reorderable" [messages]="msg">
+  </ngx-datatable>
+  <select [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChanged($event)">
+    <option *ngFor="let opt of limitOptions" [ngValue]="opt.value">{{opt.key}}</option>
+  </select> Rows per page
+
+  <ng-template #hdrTplAction let-column="column">
+      Errors
+    </ng-template>
+    <ng-template #editTmplAction let-row="row" let-value="value">
+        <button type="button" class="font-weight-bold grid_view_btn" (click)="showError(row)">Link Error</button>
+      </ng-template>
+      <button type="button" class="font-weight-bold grid_view_btn" (click)="showError()">Link Error</button>
+
+</div>
+</div>
+</div>

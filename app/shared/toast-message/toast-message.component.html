@@ -1,0 +1,31 @@
+<div *ngIf="toastFlag">
+  <div class="toast-message" [ngClass]="data?.classTxt">
+    <svg class="close-toast" (click)="close()" width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1389.000000, -896.000000)">
+        <g transform="translate(1076.000000, 886.000000)" fill="#FFFFFF" fill-rule="nonzero">
+          <path d="M319.807334,15.5000258 L323.729238,11.5781169 C324.090254,11.2171005 324.090254,10.6317787 323.729238,10.270814 C323.368222,9.90979754 322.782953,9.90979754 322.421937,10.270814 L318.499981,14.1927745 L314.578025,10.2707623 C314.217009,9.90974589 313.631739,9.90974589 313.270723,10.2707623 C312.909759,10.6317787 312.909759,11.2171005 313.270723,11.5780653 L317.192679,15.4999742 L313.270723,19.4219347 C312.909759,19.7829511 312.909759,20.3682729 313.270723,20.7292377 C313.631739,21.0902541 314.217009,21.0902541 314.578025,20.7292377 L318.499981,16.8072771 L322.421937,20.7292377 C322.782901,21.0902541 323.368222,21.0902541 323.729238,20.7292377 C324.090254,20.3682213 324.090254,19.7829511 323.729238,19.4219347 L319.807334,15.5000258 Z"></path>
+        </g>
+      </g>
+    </svg>
+    <div class="clearfix">
+      <div class="fl">
+        <svg class="check-icon" _ngcontent-c7="" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px" version="1.1" viewBox="0 0 30 30" width="30px" xmlns="http://www.w3.org/2000/svg">
+          <g _ngcontent-c7="" fill="#fff" fill-rule="evenodd" stroke="none" stroke-width="1" transform="translate(-78.000000, -570.000000)">
+            <g _ngcontent-c7="" transform="translate(78.000000, 570.000000)">
+              <circle _ngcontent-c7="" cx="13" cy="13" fill-rule="nonzero" r="13"></circle>
+              <polyline _ngcontent-c7="" points="20 8 11.3846154 17 6 13" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="fl description">
+        <div class="description-message" translate>
+          {{data?.title}}
+        </div>
+        <div translate>
+          {{data?.message}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

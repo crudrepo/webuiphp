@@ -1,0 +1,34 @@
+<div class="modal-header">
+  <h4 class="modal-title text-18 font-weight-bold">Import File</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true" class="font-weight-normal">&times;</span>
+  </button>
+</div>
+<div class="modal-body clearfix">
+  <div class="form-group">
+      <label class="text-14 d-block">Download template</label>
+      <button type="button" class="btn btn-outline-primary font-weight-bold" (click) = "exportFile(true)">Template name.ext</button>
+  </div>
+  <div class="form-group">
+    <label [hidden]="fileData.dirty || !fileData.touched" class="file-error-message" class="text-14 d-block">Select a file to validate.</label>
+    <label class="custom-file">
+      <input class="custom-file-input"  type="file" name="import-file" [(ngModel)] = "fileName" accept=".xls,.xlsx" (change)="fileChangeEvent($event)" (click)="fileData.touched=true">
+      <span class="custom-file-control"></span>
+      <!-- <span [hidden]="fileData.invalidSize">(Only Excel format supported.)</span> -->
+      <span [hidden]="!fileData.invalidSize" class="form-text text-muted">(Data Size Cannot Exceed 10 MB. Please retry by uploading the data in multiple files - each with size less than 10 MB.)</span>
+      <span [hidden]="fileData.invalidSize" class="form-text text-muted">Only Excel format supported. Max size 25 MB</span>
+     
+      
+    </label>
+   <!-- <ul>
+      <li><span class="form-text text-danger">dangerfsdv asdasasssssssssssssssssssssssss asasascas ascasc sd</span></li>
+      <li><span class="form-text text-danger">danger</span></li>
+      <li><span class="form-text text-danger">danger</span></li>
+      <li><span class="form-text text-danger">danger</span></li>
+    </ul> --> 
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" (click)="submitFile()" [disabled]="!fileData.valid" class="btn btn-success rounded-0 font-weight-bold pl-5 pr-5">Submit</button>
+</div>

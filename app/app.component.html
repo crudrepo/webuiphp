@@ -1,0 +1,16 @@
+<div *ngIf="appLoader" class="appLoading overlay position-absolute w-100 d-flex justify-content-center h-100 align-items-center">
+  <app-loader></app-loader>
+</div>
+<div  [hidden]="appLoader">
+<app-classic-header [user]="userDetails"></app-classic-header>
+
+<div class="d-block position-relative clearfix dew-layout">
+    <div class="text-white spotlight container-fluid position-relative d-block">
+      <app-header></app-header>
+    </div>
+    <router-outlet></router-outlet>
+    <app-modal></app-modal>
+    <app-toast-message></app-toast-message>
+    <app-footer class="dew-footer bg-white d-flex align-items-center justify-content-between"></app-footer>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="dew-collapse-group">
+  <div class="dew-collapse">
+    <div class="collapse-toggle">
+      <div class="d-flex align-items-center">
+        <div class="float-left text-subtitle">Filters</div>
+      </div>
+    </div>
+  </div>
+  <div class="dew-collapse">
+    <div class="collapse-toggle">
+      <div class="d-flex align-items-center">
+        <div class="float-left text-subhead-b">Status (2)</div>
+        <div class="ml-auto mr-3">
+          <ng-content select="dew-collapse-header"></ng-content>
+        </div>
+        <i class="icon icon-chevron-right text-12 text-gray-500"></i>
+      </div>
+    </div>
+    <div class="collapse show">
+      <ng-content></ng-content>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="statusdraft">
+            <label class="custom-control-label" for="statusdraft">Draft</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="statusactive">
+            <label class="custom-control-label" for="statusactive">Active</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="statusinactive">
+            <label class="custom-control-label" for="statusinactive">Inactive</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dew-collapse">
+    <div class="collapse-toggle">
+      <div class="d-flex align-items-center">
+        <div class="float-left text-subhead-b">Processes (5)</div>
+        <div class="ml-auto mr-3">
+          <ng-content select="dew-collapse-header"></ng-content>
+        </div>
+        <i class="icon icon-chevron-right text-12 text-gray-500"></i>
+      </div>
+    </div>
+    <div class="collapse show">
+      <ng-content></ng-content>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="process_1">
+            <label class="custom-control-label" for="process_1">All</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="process_2">
+            <label class="custom-control-label" for="process_2">Untagged</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="process_3">
+            <label class="custom-control-label" for="process_4">Ad</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="process_5">
+            <label class="custom-control-label" for="process_5">RMR</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="process_5">
+            <label class="custom-control-label" for="process_6">One</label>
+            <span class="float-right text-gray-600">(123)</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

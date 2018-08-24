@@ -1,0 +1,88 @@
+<div class="h-clearfix h-header">
+  <div class="h-clearfix h-topBand">
+    <div class="h-clearfix h-topBand-pad">
+      <div class="h-fL h-topBand-det">
+        <a class="h-fL h-logo" href="#">
+          <img [src]="user.tenantLogo" class="h-logo-img" *ngIf="user.tenantLogo" style="max-width:100px;max-height:30px;">
+        </a>
+        <span class="h-fL h-topBand-det-prodWrap">
+          <img src="" class="workflow-logo h-fL" />
+          <span class="h-fL h-prodName">
+            Rule Manager
+          </span>
+          <span class="h-fR h-topBand-arr">
+            <a href="{{user?.tmsHomePage}}">
+              <svg class="svg" viewBox="0 0 512 512">
+                <polygon points="261,405.4 55,123.599 260.594,257.064 463,123.599 "></polygon>
+              </svg>
+            </a>
+          </span>
+        </span>
+      </div>
+      <div class="h-topBand-lnks">
+        <div class="h-fR h-topBand-lnks-wrap">
+          <ul id="newMainNav" class="h-clearfix h-topBand-nav">
+            <li class="h-topBand-nav-lst h-curDef" title="{{user.userProfile?.displayName}}">Hi, {{user.userProfile?.displayName}}</li>
+            <li class="h-topBand-nav-lst h-hasSubTabs">
+              <span class="h-settings">
+                <svg class="svg" viewBox="0 0 1024 1024">
+                  <path d="M 927.229 446.759 l -88.759 -14.807 c -6.451 -26.374 -15.857 -51.585 -28.107 -75.099 l 56.821 -70.452 c 12.085 -14.889 11.536 -36.312 -1.205 -50.682 l -35.301 -39.73 c -12.796 -14.355 -34.015 -17.391 -50.202 -7.165 l -75.906 47.716 c -33.386 -23.326 -71.204 -40.551 -112 -50.546 l -14.85 -89.235 C 574.604 77.864 558.253 64 539.059 64 h -53.198 c -19.155 0 -35.561 13.864 -38.609 32.759 l -14.93 89.263 c -33.729 8.258 -65.353 21.588 -94.213 39.144 l -72.188 -51.518 c -15.558 -11.115 -36.927 -9.377 -50.504 4.171 l -37.583 37.61 c -13.548 13.577 -15.286 34.946 -4.142 50.504 l 51.638 72.326 c -17.391 28.642 -30.584 60.086 -38.841 93.514 l -89.743 14.986 c -18.866 3.116 -32.757 19.469 -32.757 38.663 v 53.156 c 0 19.194 13.891 35.547 32.757 38.663 l 89.743 14.986 c 6.781 27.507 16.625 53.784 29.709 78.147 l -56.562 70.054 c -12.044 14.875 -11.538 36.312 1.203 50.669 l 35.274 39.73 c 12.797 14.382 34.028 17.363 50.216 7.163 l 77 -48.37 c 32.581 22.285 69.44 38.664 108.993 48.37 l 14.93 89.25 C 450.3 946.137 466.706 960 485.861 960 h 53.198 c 19.194 0 35.545 -13.863 38.661 -32.759 l 14.875 -89.25 c 33.308 -8.147 64.531 -21.245 93.134 -38.5 l 75.196 53.705 c 15.531 11.156 36.915 9.406 50.478 -4.185 l 37.597 -37.597 c 13.533 -13.536 15.366 -34.893 4.127 -50.478 l -53.536 -75.059 c 17.442 -28.738 30.704 -60.238 38.909 -93.816 l 88.758 -14.821 c 18.921 -3.116 32.756 -19.469 32.756 -38.663 v -53.156 C 959.987 466.228 946.152 449.875 927.229 446.759 Z M 513.409 680 c -92.764 0 -168 -75.25 -168 -168 c 0 -92.764 75.236 -168 168 -168 c 92.748 0 167.998 75.236 167.998 168 C 681.407 604.75 606.157 680 513.409 680 Z"></path>
+                </svg>
+              </span>
+              <span class="h-topBand-arr h-topband-down-arr icon-arrow h-topBand-lnks-down-arr">
+                <svg class="svg" viewBox="0 0 512 512">
+                  <polygon points="261,405.4 55,123.599 260.594,257.064 463,123.599 "></polygon>
+                </svg>
+              </span>
+              <ul class="h-topBand-nav-menu">
+                <li class="h-topBand-menu-lst" onclick="javascript:open_win('fb461719-0528-447d-bb38-9c1be7c19ccf');">
+                  <a [href]="user.UserProfilelink" class="h-topBand-menu-lnk" target="_blank">User Profile</a>
+                </li>
+              </ul>
+            </li>
+            <!-- <li class="h-topBand-nav-lst h-borderSep"></li>
+              <li class="h-topBand-nav-lst h-hasSubTabs">
+                <span class="h-quest">
+                  <svg class="svg" viewBox="0 0 512 512">
+                    <path d="M259.462,462c-24.864,0-45.03-20.166-45.03-45.039c0-24.86,20.166-45.02,45.03-45.02
+                    c24.87,0,45.029,20.159,45.029,45.02C304.491,441.834,284.332,462,259.462,462z M294.865,328.9v8.1c0,0-67.513,0-74.229,0v-8.1
+                    c0-22.922,3.344-52.326,29.956-77.89c26.613-25.567,59.87-46.687,59.87-78.625c0-35.309-24.503-53.985-55.399-53.985
+                    c-51.483,0-54.846,53.393-56.115,65.149H126.75C128.673,127.874,152.206,50,255.494,50c89.513,0,129.756,59.949,129.756,116.166
+                    C385.25,255.646,294.865,271.189,294.865,328.9z"></path>
+                  </svg>
+
+                </span>
+                <span class="h-topBand-arr h-topband-down-arr icon-arrow h-topBand-lnks-down-arr">
+                  <svg class="svg" viewBox="0 0 512 512">
+                    <polygon points="261,405.4 55,123.599 260.594,257.064 463,123.599 "></polygon>
+                  </svg>
+                </span>
+                <ul class="h-topBand-nav-menu">
+                  <li class="h-topBand-menu-lst" id="lastLiId"><div id="TM_MN_HELP_00002" class="liveSuppDv"><div id="LPMcontainer-1518607990821-0" class="LPMcontainer LPMoverlay" role="button" tabindex="0" style="margin: 0px; padding: 0px; border-style: solid; border-width: 0px; font-style: normal; font-weight: normal; font-variant: normal; list-style: none outside none; letter-spacing: normal; line-height: normal; text-decoration: none; vertical-align: baseline; white-space: normal; word-spacing: normal; background-repeat: repeat-x; background-position: left bottom; cursor: auto; display: block; position: relative; top: 0px; left: 0px;"><a class="h-topBand-menu-lnk" href="#"> <div style="width:72px" data-lp-event="click"><p><span id="lpTextLinkSpan514776801" class="lpChatTextLinkText"><span style="font-size: small;"><span style="font-family: verdana,geneva;">Live Support</span></span></span></p></div>  </a></div></div></li>
+                </ul>
+              </li> -->
+            <li class="h-topBand-nav-lst h-borderSep"></li>
+
+            <li id="logout1" class="h-topBand-nav-lst h-topBand-nav-lnk">
+              <a class="h-logOut icon-ic-logout" title="Logout" (click)="logout()">
+                <svg class="svg" viewBox="0 0 512 512">
+                  <path d="M256,473c-72.355,0-139.777-38.926-175.954-101.586c-36.177-62.661-36.177-140.513,0-203.173
+                    c14.945-25.889,34.937-47.706,59.418-64.845l9.011-6.308l36.063,51.504l-9.012,6.309c-16.902,11.832-30.706,26.897-41.03,44.776
+                    c-24.981,43.27-24.981,97.029,0,140.299c24.982,43.27,71.539,70.148,121.503,70.148c49.963,0,96.52-26.879,121.501-70.148
+                    s24.981-97.029,0-140.3c-10.322-17.877-24.126-32.942-41.029-44.775l-9.013-6.309l36.067-51.504l9.01,6.308
+                    c24.479,17.138,44.471,38.955,59.418,64.845c36.178,62.66,36.178,140.512,0,203.173C395.776,434.074,328.354,473,256,473z
+                    M302,245.001h-92V39h92V245.001z"></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="tab-all" class="h-clearfix h-tab-all">
+    <div id="tab-fit" class="h-clearfix h-tab-fit">
+      <app-tab *ngFor="let tab of user.tmsTabs" [tabData]="tab"></app-tab>
+    </div>
+  </div>
+</div>

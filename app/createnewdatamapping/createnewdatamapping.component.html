@@ -1,0 +1,45 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-12 pb-custom">
+      <p class="text-13 font-italic">(Fields marked with
+        <span class="text-danger text-18 font-weight-bold">*</span> are mandatory)
+      </p>
+
+      <div class=" bg-white radius-lg col-md-12 border">
+        <div class="row pt-3 dew-tabset-ngb">
+          <ngb-tabset #tabData="ngbTabset" (tabChange)="beforeChange($event)">
+            <ngb-tab id="tab-selectbyid1">
+              <ng-template ngbTabTitle>
+                <h6 class="mb-0">Step 1</h6>
+                <small class="text-bold">Basic Information</small>
+              </ng-template>
+              <ng-template ngbTabContent>
+                <app-step1 [appLoader] = "appLoader" [tableName] = "tableName" [uuid] = "uuid" [desc] = "desc" #step1></app-step1>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab id="tab-selectbyid2">
+              <ng-template ngbTabTitle>
+                <h6 class="mb-0">Step 2</h6>
+                <small class="text-bold">Define Columm</small>
+              </ng-template>
+              <ng-template ngbTabContent>
+
+                <app-step2></app-step2>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="tab-selectbyid3">
+      <ng-template ngbTabTitle>
+        <h6 class="mb-0">Step 3</h6>
+        <small class="text-bold">Data Mapping</small>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <app-step3></app-step3>
+</ng-template>
+</ngb-tab>
+</ngb-tabset>
+</div>
+</div>
+</div>
+</div>
+</div>
+<app-actionfooterbar (valueChange)='saveData($event)' [slideup]="slideup" [saveContinue]="saveContinue" [saveDraft]="saveDraft" [ok]="ok"></app-actionfooterbar>

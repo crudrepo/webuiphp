@@ -1,0 +1,76 @@
+<div class="container-fluid my-5">
+      <div class="box-shadow bg-white radius-lg col-md-12">
+            <div class="row">
+                  <div class="col-md-12">
+                        <h5 class="text-title mt-5">Basic Details</h5>
+                  </div>
+                  <form>
+                        <div class="col-md-12 mt-2">
+                              <div class="row">
+                                    <div class="col-md-3" *ngFor="let row of details">
+                                          <div class="form-group">
+                                                <label for="wfname" class="text-gray-700">{{row.key}}</label>
+                                                <div class="text-gray-800">{{row.value}}</div>
+                                          </div>
+                                    </div>
+                                    <!--div class="col-md-3">
+                                          <div class="form-group">
+                                                <label for="wfname" class="text-gray-700">Table Name</label>
+                                                <div class="text-gray-800">{{cultDetails.name}}</div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                          <div class="form-group">
+                                                <label for="wfprocess" class="text-gray-700">Process</label>
+                                                <div class="text-gray-800">{{processDetails.processDisplayName}}</div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                          <div class="form-group">
+                                                <label for="wfproduct" class="text-gray-700">Master Entities</label>
+                                                <div class="text-gray-800">{{mEntities}}</div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                          <div class="form-group">
+                                                <label for="wfentity" class="text-gray-700">User Entities</label>
+                                                <div class="text-gray-800">{{uEntities}}</div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                          <div class="form-group">
+                                                <label for="wfcurrency" class="text-gray-700">Approval Limit</label>
+                                                <div class="text-gray-800">Yes</div>
+                                          </div>
+                                    </div-->
+                              </div>
+                              <!--div class="row">
+                                    <div class="col-md-6">
+                                          <div class="form-group">
+                                                <label for="wfdescription" class="text-gray-700">Description</label>
+                                                <div class="text-gray-800">{{cultDetails.description}}</div>
+                                          </div>
+                                    </div>
+                              </div-->
+                        </div>
+                  </form>
+                  <div class="form-dividers"></div>
+            </div>
+
+
+
+            <div class="dew-table" *ngIf="rowsRendered">
+                  <h5 class="text-title mt-5">Approver Rules</h5>
+                  <div class="table-wrapper">
+                        <ngx-datatable #table class="material table" [rows]="rows" [columns]="columns" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'"
+                              [limit]="10">
+                        </ngx-datatable>
+                  </div>
+            </div>
+      </div>
+</div>
+<div class="form-footer bg-white d-flex align-items-center justify-content-between">
+      <div class="col-md-12 py-3">
+            <button type="button" class="btn btn-outline-primary float-right" (click)="backToListing()">Back to listing</button>
+      </div>
+</div>

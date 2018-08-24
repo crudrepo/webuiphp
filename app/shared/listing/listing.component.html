@@ -1,0 +1,72 @@
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="display:none;" id="successMessage">
+  Task successful!
+</div>
+<div class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none;" id="FailMessage">
+  Task failed, please try later!
+</div>
+<div class="dew-table">
+  <div class="table-wrapper">
+    <ngx-datatable #table class="material table" 
+    [scrollbarH]="scroll" 
+    [rows]="rows" 
+    [loadingIndicator]="loadingIndicator" 
+    [columns]="columns" 
+    [columnMode]="'force'"
+    [headerHeight]="50" 
+    [footerHeight]="50" 
+    [rowHeight]="'auto'" 
+    [reorderable]="reorderable" 
+    [messages]="msg"    
+    [externalPaging]="true"
+    [count]="count"
+    [offset]="offset"
+    [limit]="limit"
+    (page)='setPage($event)'>
+  </ngx-datatable>
+  <select [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChanged($event)">
+    <option *ngFor="let opt of limitOptions" [ngValue]="opt.value">{{opt.key}}</option>
+  </select> Rows per page
+
+  <!-- header checkbox -->
+  <ng-template #hdrTplCheck let-column="column">
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="head_check" [checked]="isAllChecked()" (change)="checkAll($event)">
+      <label class="custom-control-label" for="head_check"></label>
+    </div>
+  </ng-template>
+  <!-- row checkbox -->
+  <ng-template #editTmplCheck let-row="row" let-value="value" let-rowIndex="rowIndex">
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input listingCheckbox" id="check_{{rowIndex}}" [(ngModel)]="row.state" (change)="recordState(row.code, row.state)">
+      <label class="custom-control-label" for="check_{{rowIndex}}"></label>
+    </div>
+  </ng-template>
+  <!-- Action column -->
+  <ng-template #hdrTplAction let-column="column">
+    Action
+  </ng-template>
+  <!-- Action column dropdown -->
+  <ng-template #editTmplAction let-row="row" let-value="value">
+    <button type="button" class="font-weight-bold grid_view_btn" *ngIf='checkmode == "listdatamapping"' (click)="getCurrentView(row)">View</button>
+    <button type="button" class="font-weight-bold grid_view_btn" *ngIf='checkmode == "ViewDatamapping"' (click)="deactivateAction(row)">Deactivate</button>
+    <div ngbDropdown class="d-inline-block float-right" *ngIf='checkmode == "listdatamapping"'>
+      <a class="actions_link" id="dropdownBasic1" ngbDropdownToggle>&#x22EE;</a>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item" (click)="editAction(row)">Edit</button>
+        <!--<button class="dropdown-item" (click)="deleteAction(row)">Delete</button>
+        <button class="dropdown-item" (click)="deactivateAction(row)">Deactiveate</button>-->
+      </div>
+    </div>
+  </ng-template>
+</div>
+</div>
+<!-- <div [hidden]="!isAnyChecked()">
+<div class="dew-btns-footer dew-btn bg-white pt-3 pb-3">
+<button type="button" class="btn dew-btn-default ">Cancel</button>
+<div [hidden]="isCreateWorkflow">
+<button type="button" class="btn btn-success pl-4 pr-4 float-right font-weight-bold" id="export" (click)="getExportData()">Export</button>
+</div>
+<button type="button" class="btn dew-btn-default float-right mr-3" (click)="deactivateAction()">Deactivate</button>
+<button type="button" class="btn dew-btn-default float-right mr-3" (click)="deleteAction()">Delete</button>
+</div>
+</div> -->
