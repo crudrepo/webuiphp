@@ -38,7 +38,7 @@ Class Product_Model extends CI_Model {
 		}
 
 
-	public function deleteCategory($id) {
+	public function deleteProduct($id) {
 		$this->db->set('status',0);
 		$this->db->where('id', $id);
 		$this->db->update('products');
@@ -51,7 +51,7 @@ Class Product_Model extends CI_Model {
 	}
 
 
-	public function addCategory($data) {
+	public function addProduct($data) {
 		// Query to insert data in database
 		$this->db->insert('products', $data);
 		if ($this->db->affected_rows() > 0) {
@@ -61,7 +61,7 @@ Class Product_Model extends CI_Model {
 
 	}
 
-	public function updateCategory($id,$data) {
+	public function updateProduct($id,$data) {
 
 
 	$this->db->where('id', $id);

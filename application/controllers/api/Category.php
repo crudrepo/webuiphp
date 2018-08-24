@@ -7,18 +7,17 @@ require APPPATH . '/libraries/REST_Controller.php';
 // use namespace
 use Restserver\Libraries\REST_Controller;
 
-class Users extends REST_Controller {
+class Category extends REST_Controller {
 
     function __construct()
     {
         parent::__construct();
 
 		// Load database
-		$this->load->model('User_Model','user_model');
+		$this->load->model('Category_Model','category_model');
 
     }
-
-    public function user_get()
+	public function category_get()
     {
 
         $id = $this->get('id');
@@ -32,15 +31,14 @@ class Users extends REST_Controller {
                 ], REST_Controller::HTTP_BAD_REQUEST); // BAD_REQUEST (400) being the HTTP response code
             }
 
-			$users = $this->user_model->getUser($id);
+			$category = $this->category_model->getCategory($id);
 
-            // Check if the users data store contains users (in case the database result returns NULL)
-            if ($users)
+            if ($category)
             {
                 // Set the response and exit
                 $this->response([
                     'status' => TRUE,
-                    'result' => $users
+                    'result' => $category
                 ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
             }
             else
@@ -48,22 +46,22 @@ class Users extends REST_Controller {
                 // Set the response and exit
                 $this->response([
                     'status' => FALSE,
-                    'message' => 'No user were found'
+                    'message' => 'No data were found'
                 ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
             }
 
     }
-    public function userlist_get()
+
+	public function categorylist_get()
     {
-			$users = $this->user_model->listUsers(true);
+			$category = $this->category_model->listCategory(true);
 
-            // Check if the users data store contains users (in case the database result returns NULL)
-            if ($users)
+            if ($category)
             {
                 // Set the response and exit
                 $this->response([
                     'status' => TRUE,
-                    'result' => $users
+                    'result' => $category
                 ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
             }
             else
@@ -71,24 +69,21 @@ class Users extends REST_Controller {
                 // Set the response and exit
                 $this->response([
                     'status' => FALSE,
-                    'message' => 'No user were found'
-                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+                    'message' => 'No data were found'
+                ], REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
             }
 
     }
 
-    public function logincheck_post()
+    public function category_post()
     {
 		$data=array(
-				'emailId'=>$this->post('emailId'),
-				'password'=>$this->post('password')
+				'name'=>$this->post('name')
 		);
-		$users = $this->user_model->login($data);
-         if(!empty($users)){
+         if($this->category_model->addCategory($data)){
 			  $message = [
 					'name' => $this->post('name'),
-					'email' => $this->post('email'),
-					'message' => 'Added a user Successfully'
+					'message' => 'Added Successfully'
 				];
 
 				$this->set_response([
@@ -98,45 +93,14 @@ class Users extends REST_Controller {
 		 } else {
 			 $this->response([
                     'status' => FALSE,
-                    'message' => 'Error while added user'
-			 ],  REST_Controller::HTTP_CREATED); // BAD_REQUEST (400) being the HTTP response code
-		 }
-
-    }
-    public function user_post()
-    {
-		$data=array(
-				'name'=>$this->post('name'),
-				'address'=>$this->post('address'),
-				'pincode'=>$this->post('pincode'),
-				'emailId'=>$this->post('emailId'),
-				'password'=>$this->post('password'),
-				'userType'=>$this->post('userType'),
-				'createdOn'=> date('Y-m-d H:i:s'),
-				'mobileNo'=>$this->post('mobileNo')
-		);
-         if($this->user_model->addUser($data)){
-			  $message = array(
-					'name' => $this->post('name'),
-					'email' => $this->post('email'),
-					'message' => 'Added a user Successfully'
-				);
-
-				$this->set_response([
-							'status' => TRUE,
-							'message' => $message
-						], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code */
-		 } else {
-			 $this->response([
-                    'status' => FALSE,
-                    'message' => 'Error while added user'
-			 ], REST_Controller::HTTP_CREATED); // BAD_REQUEST (400) being the HTTP response code
+                    'message' => 'Error while adding'
+                ], REST_Controller::HTTP_BAD_REQUEST); // BAD_REQUEST (400) being the HTTP response code
 		 }
 
     }
 
 
-    public function user_put($id)
+    public function category_put($id)
     {
 
         //$id = $this->get('id');
@@ -153,20 +117,13 @@ class Users extends REST_Controller {
         }
 
 		$data=array(
-				'name'=>$this->put('name'),
-				'address'=>$this->put('address'),
-				'pincode'=>$this->put('pincode'),
-				'emailId'=>$this->put('emailId'),
-				'password'=>$this->put('password'),
-				'userType'=>$this->put('userType'),
-				'mobileNo'=>$this->put('mobileNo')
+				'name'=>$this->put('name')
 		);
-         if($this->user_model->updateUser($id,$data)) {
+         if($this->category_model->updateCategory($id,$data)) {
 				 $message = [
 				'id' => $id, // Automatically generated by the model
 				'name' => $this->put('name'),
-				'email' => $this->put('email'),
-				'message' => 'User Updated Successfully! '
+				'message' => ' Updated Successfully! '
 			];
 
 			$this->set_response([
@@ -176,13 +133,13 @@ class Users extends REST_Controller {
 		 }  else {
 			 $this->response([
                     'status' => FALSE,
-                    'message' => 'Error while updating user'
+                    'message' => 'Error while updating '
                 ], REST_Controller::HTTP_BAD_REQUEST); // BAD_REQUEST (400) being the HTTP response code
 		 }
 
     }
 
-    public function user_delete($id)
+    public function category_delete($id)
     {
         $id = (int) $id;
 
@@ -195,7 +152,7 @@ class Users extends REST_Controller {
                 ], REST_Controller::HTTP_BAD_REQUEST); // BAD_REQUEST (400) being the HTTP response code
         }
 
-       if( $this->user_model->deleteUser($id)) {
+       if( $this->category_model->deleteCategory($id)) {
 		    $message = [
 				'id' => $id,
 				'message' => 'Deleted User Successfully'
@@ -213,7 +170,6 @@ class Users extends REST_Controller {
 	   }
 
     }
-
 
 
 }
