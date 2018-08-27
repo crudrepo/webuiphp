@@ -85,10 +85,11 @@ class Users extends REST_Controller {
 		);
 		$users = $this->user_model->login($data);
          if(!empty($users)){
+             $data =  $this->user_model->getUser($this->post('emailId'));
 			  $message = [
-					'name' => $this->post('name'),
-					'email' => $this->post('email'),
-					'message' => 'Added a user Successfully'
+			      'data' => $data,
+			      'email' => $this->post('emailId'),
+			      'message' => 'Valid User'
 				];
 
 				$this->set_response([
@@ -98,7 +99,7 @@ class Users extends REST_Controller {
 		 } else {
 			 $this->response([
                     'status' => FALSE,
-                    'message' => 'Error while added user'
+                    'message' => 'Invalid User'
 			 ],  REST_Controller::HTTP_CREATED); // BAD_REQUEST (400) being the HTTP response code
 		 }
 

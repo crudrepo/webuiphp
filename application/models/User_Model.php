@@ -12,7 +12,7 @@ Class User_Model extends CI_Model {
 			} else {
 				$this->db->where('user_status != 0');
 			}
-			
+
 			$this->db->order_by('createdOn', 'desc');
 			$query = $this->db->get();
 			$data=array();
@@ -27,7 +27,7 @@ Class User_Model extends CI_Model {
 			$this->db->from('users');
 			if(!empty($id))
 			{
-				$this->db->where('id',$id);
+				$this->db->where('emailId',$id);
 			}
 			$this->db->order_by('createdOn', 'desc');
 			$query = $this->db->get();
@@ -36,7 +36,7 @@ Class User_Model extends CI_Model {
 			return $data;
 
 		}
-		
+
 	public function login($data) {
 
 		$condition = "emailId =" . "'" . $data['emailId'] . "' AND " . "password =" . "'" . $data['password'] . "'";
@@ -59,7 +59,7 @@ Class User_Model extends CI_Model {
 		$this->db->set('user_status',0);
 		$this->db->where('id', $id);
 		$this->db->update('users');
-		
+
 		if ($this->db->affected_rows() > 0) {
 			return true;
 		}
